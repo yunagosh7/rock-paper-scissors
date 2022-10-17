@@ -1,0 +1,5 @@
+1- recibir la decision del jugador
+2- crear una funcion que saque la decision de la pc
+3- crear la funcion que saque al ganador
+4- devolver el resultado en la consola
+5- crear la funcion que juegue las 5 rondas
