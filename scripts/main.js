@@ -52,21 +52,21 @@ buttons.forEach((button)=>{
 
     if(response == "¡Has ganado la ronda!"){
       wins++;
-      scoreUser.innerText = wins;
+      scoreUser.textContent = wins;
     }
     else if(response == "¡Has perdido la ronda!"){
       loses++;
-      scoreComputer.innerText = loses;
+      scoreComputer.textContent = loses;
     }
     else if(response == "¡Empate!"){
-      result.innerText = "¡Empate!"
+      result.textContent = "¡Empate!"
     }
     if(wins == 5){
-      result.innerText = "Has ganado!";
+      result.textContent = "Has ganado!";
       layer.style.zIndex = "50"
     }
     else if(loses == 5){
-      result.innerText = "Has perdido!";
+      result.textContent = "Has perdido!";
       layer.style.zIndex = "50"
 
     }
@@ -78,8 +78,8 @@ buttons.forEach((button)=>{
 playAgain.addEventListener("click",()=>{
   wins = 0;
   loses = 0;
-  scoreComputer.innerText = 0;
-  scoreUser.innerText = 0;
+  scoreComputer.textContent = 0;
+  scoreUser.textContent = 0;
   layer.style.zIndex = "0";
-  result.innerText = "Clickea para jugar"
+  result.textContent = "Clickea para jugar"
 })
