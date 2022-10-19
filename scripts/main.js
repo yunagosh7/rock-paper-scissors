@@ -1,16 +1,9 @@
-let decision;
+const buttons = document.querySelectorAll('button');
+const scoreUser = document.getElementById("scoreUser");
+const scoreComputer = document.getElementById("scoreComputer"); 
+const layer = document.getElementById("layer");
 
-
-const validateDecision = () => {
-  decision = prompt("Piedra, papel o tijera?").toLowerCase();
-  if (decision != "piedra" && decision != "papel" && decision != "tijera") {
-    alert("Debe decidir si: piedra, papel o tijera");
-    validateDecision();
-  }
-  return decision;
-};
-
-
+//* Function for game
 const computerSelection = () => {
   let n = Math.random() * 10;
   let selection = Math.floor(n);
@@ -25,8 +18,6 @@ const computerSelection = () => {
     return "tijera";
   }
 };
-
-
 
 const playRound = (playerSelection, computerSelectionVar) => {
   if (
@@ -46,75 +37,49 @@ const playRound = (playerSelection, computerSelectionVar) => {
   }
 };
 
-
-//* Code for DOM manipulation
-
-const buttons = document.querySelectorAll('button');
-const result = document.getElementById("result")
-
 let wins = 0;
 let loses = 0;
-
+//* Code for DOM manipulation
 buttons.forEach((button)=>{
   button.addEventListener('click',()=>{
-    let playerSelection = button.textContent.toLowerCase();
+    let playerSelection = button.id;
     let computerSelectionVar = computerSelection()
+    const playAgain = document.getElementById("playAgain")
+    
 
     let response = playRound(playerSelection, computerSelectionVar)
 
 
     if(response == "¡Has ganado la ronda!"){
       wins++;
-      result.innerText = `Vas ganando ${wins} veces`;
+      scoreUser.innerText = wins;
     }
     else if(response == "¡Has perdido la ronda!"){
       loses++;
-      result.innerText = `Vas perdiendo ${loses} veces`;
+      scoreComputer.innerText = loses;
     }
     else if(response == "¡Empate!"){
       result.innerText = "¡Empate!"
     }
-    if(wins > 5){
+    if(wins == 5){
       result.innerText = "Has ganado!";
+      layer.style.zIndex = "50"
     }
-    else if(loses > 5){
+    else if(loses == 5){
       result.innerText = "Has perdido!";
+      layer.style.zIndex = "50"
+
     }
 
   })
 })
 
 
-// const game = (playRound, validateDecision, computerSelection)=>{
-//     let wins = 0;
-//     let loses = 0;
-//     let result;
-//     let playerSelection;
-//     let computerSelectionVar;
-//     for(let i=0; wins < 30 ; i++){
-//         playerSelection = validateDecision();
-//         computerSelectionVar = computerSelection();
-
-//         result = playRound(playerSelection,computerSelectionVar);
-//         if(result == '¡Has perdido la ronda!'){
-//             loses++;
-//             console.log('Vas perdiendo: ', loses, ' veces');
-//         }
-//         else if(result == '¡Has ganado la ronda!'){
-//             wins++;
-//             console.log('Vas ganando: ', wins, ' veces');
-//         }
-//         else if(result == '¡Empate!'){
-//             console.log('Empate!')
-//         }
-//         if(wins == 5 ) {
-//             console.log('Has ganado!')
-//             break
-//         } else if(loses == 5){
-//             console.log('Has perdido!')
-//             break
-//         }
-//     }
-// }
-
-// game(playRound,validateDecision,computerSelection)
+playAgain.addEventListener("click",()=>{
+  wins = 0;
+  loses = 0;
+  scoreComputer.innerText = 0;
+  scoreUser.innerText = 0;
+  layer.style.zIndex = "0";
+  result.innerText = "Clickea para jugar"
+})

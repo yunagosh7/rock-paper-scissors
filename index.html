@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>  
-    
-    <button class="piedra" id="piedra">Piedra</button>
-    <button id="papel" class="papel">Papel</button>
-    <button id="tijera">Tijera</button>
+<body class="body" background="images/fondo2.webp">  
+    <header>
+        <h1>Cuarzo, papiro o navaja </h1>
+    </header>
+    <main>
+        <div class="container result">
+            <div id="scoreUser">0</div>
+            <div>|</div>
+            <div id="scoreComputer">0</div>
+        </div>
+        <h2 id="result">Clickea para jugar</h2>
+        
+
+        <div class="container">
+            <div id="layer"></div>
+            <button class="piedra" id="piedra"><img src="images/quarzo.png" alt=""></button>
+            <button id="papel" class="papel"><img src="images/papiro.png" alt=""></button>
+            <button id="tijera" class="tijera"><img src="images/navaja.png" alt=""></button>
+        </div>
+        <button id="playAgain" class="playAgain">Jugar de nuevo</button>
+    </main>
                         
-    <div id="result"></div>
+        <img src="images/papaleta.png" class="pops">
 
 
     <script src="scripts/main.js"></script>

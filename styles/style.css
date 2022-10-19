@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Rainmaker';
+    src: url('/styles/the_rainmaker/The\ Rainmaker.otf');
+}
+
+.body{
+    font-family: 'Rainmaker', sans-serif;
+    letter-spacing: 6px;
+    color: #fff;
+}
+
+
+h1{
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 10px ;
+    text-align: center;
+}
+h2{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+table{
+    table-layout: auto ;
+}
+
+button{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+#layer{
+    width: 95%;
+    height: 35vh;
+    position: absolute;
+    z-index: 0;
+}
+
+
+button.piedra{
+    position: relative;
+    z-index: 10;
+    background-color: #b796c8;
+}
+
+button.papel{
+    position: relative;
+    z-index: 9;
+    background-color: rgb(232, 232, 19)
+}
+button.tijera{
+    position: relative;
+    z-index: 8;
+    background-color: #bd6b11;
+}
+
+.tijera, .papel, .piedra{
+    background-color: #fff;
+}
+
+.container{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container.result{
+    display: flex;
+    font-size: 2.5rem;
+}
+
+
+#scoreUser{
+    margin-right: 10%;
+}
+#scoreComputer{
+    margin-left: 10%;
+}
+
+
+img{
+    width: 200px;
+}
+
+
+.playAgain{
+    width: 250px;
+    height: 3rem;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(195,151,240);
+background: linear-gradient(90deg, rgb(172, 109, 236) 0%, rgba(71,22,211,1) 50%, rgb(51, 55, 171) 100%);
+    color: #fff;
+    font-weight: bold;
+    margin: 50px auto;
+    font-size: 1.1rem;
+    font-family: 'Rainmaker', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+main{
+    text-align: center;
+}
+
+
+.pops{
+    margin-left:80vw;
+    margin-top: 40px;
+}
